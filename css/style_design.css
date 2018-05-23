@@ -1,0 +1,47 @@
+
+
+body{
+	background-color:rgba(130,20,130,0.3);
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button  {
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	appearance:none;
+}
+
+input{
+	border:none;
+	background-color:none;
+	color:black;
+}
+
+.counter{
+	color:black;
+}
+
+
+#wrapper {
+	
+}
+
+#header-block{
+	
+}
+
+#clockBlock{
+	
+}
+
+#session-block {
+	border-radius:30%;
+	border:5px solid black;
+	color: black;
+	font-size: 30px;
+}
+
+.timer {
+	font-size: 30px;
+}
+
+
