@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Yatra+One');
+
+body{
+	font-family: "Yatra One", cursive;
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button  {
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	appearance:none;
+}
+
+.counter{
+	color:black;
+}
+
+
+#wrapper {
+	background: -moz-linear-gradient(top, rgba(168,73,163,0.86) 0%, rgba(196,84,194,0.86) 7%, rgba(200,94,199,0.75) 16%, rgba(229,112,231,0.7) 27%, rgba(229,114,231,0.7) 28%, rgba(226,144,229,0.65) 44%, rgba(183,244,244,0.65) 57%, rgba(138,242,242,0.7) 70%, rgba(101,242,242,0.75) 81%, rgba(76,239,239,0.8) 90%, rgba(58,241,241,0.86) 97%, rgba(50,242,242,0.86) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(168,73,163,0.86) 0%,rgba(196,84,194,0.86) 7%,rgba(200,94,199,0.75) 16%,rgba(229,112,231,0.7) 27%,rgba(229,114,231,0.7) 28%,rgba(226,144,229,0.65) 44%,rgba(183,244,244,0.65) 57%,rgba(138,242,242,0.7) 70%,rgba(101,242,242,0.75) 81%,rgba(76,239,239,0.8) 90%,rgba(58,241,241,0.86) 97%,rgba(50,242,242,0.86) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(168,73,163,0.86) 0%,rgba(196,84,194,0.86) 7%,rgba(200,94,199,0.75) 16%,rgba(229,112,231,0.7) 27%,rgba(229,114,231,0.7) 28%,rgba(226,144,229,0.65) 44%,rgba(183,244,244,0.65) 57%,rgba(138,242,242,0.7) 70%,rgba(101,242,242,0.75) 81%,rgba(76,239,239,0.8) 90%,rgba(58,241,241,0.86) 97%,rgba(50,242,242,0.86) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+#header {
+	font-size: 40px;
+}
+
+.btn-action {
+	font-family: "Yatra One", cursive;
+	border:none;
+	border-radius: 50%;
+	height:25%;
+	width: 25%;
+	background-color: rgba(255,255,255,0.0);
+	font-size:23px;
+}
+
+.btn-action:hover {
+	cursor: pointer;
+}
+
+#session-block {
+	color: black;
+	font-size: 30px;
+}
+
+.timer {
+	font-size: 30px;
+}
+
+.clock-block-inner {
+	font-size:20px;
+}
+
+.inputBtn{
+	border:none;
+	background-color: rgba(255,255,255,0.0);
+	font-size:25px;
+}
+.inputBtn:hover{
+	cursor: pointer;
+}
+
+.counter{
+	font-size:25px;
+}
+
+
