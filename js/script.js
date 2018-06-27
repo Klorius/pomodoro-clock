@@ -54,6 +54,7 @@ $("#start").click(function() {
 	isCountDown = true;
 	paused = false;
 	$(".inputBtn").addClass("hidden");
+	$("#pause").removeClass("resume").empty().text("PAUSE");
 });
 
 
