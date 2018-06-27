@@ -140,6 +140,7 @@ $("#reset-btn").click(function(){
 	$("#countDownSec").empty();
 	$("#countDownMinute").empty();
 	$("#countDownHour").empty();
+	$("#pause").removeClass("resume").empty().text("PAUSE");
 })
 
 
