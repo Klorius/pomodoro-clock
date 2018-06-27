@@ -3,9 +3,13 @@ var countBreak = $("#breakInput").html();
 var sessionCountWork = $("#workInput").html();
 var sessionCountBreak = $("#breakInput").html();
 var isCountDown = false;
+var paused; //checks whether the timer is paused or running
 var audioReady = new Audio("sound/ready.wav");
 var audioWorkcomplete = new Audio("sound/work-complete.wav");
-
+var hour_left;
+var min_left;
+var sec_left;
+var time_left;
 
 
 	/*work counter*/
@@ -37,31 +41,47 @@ var audioWorkcomplete = new Audio("sound/work-complete.wav");
 	$("#btn-plus-break").click(function(){
 			countBreak++;
 		$("#breakInput").html(countBreak);
+		
 		});
-	
-
-
-
-	
-		if (isCountDown = true) {
-		$(".inpunBtn").disabled = true;
-	};
+			
 
 
 /*start and stop button*/
 $("#sessionName").text("Work");
 $("#start").click(function() {
-	countdown($("#workInput").html()) //incoorperate a resume function
+	if (paused === false) {return;}
+	countdown($("#workInput").html()) 
 	isCountDown = true;
+	paused = false;
+	$(".inputBtn").addClass("hidden");
 });
+
 
 
 /*make the countdown pause*/
 $("#pause").click(function(){
-	clearInterval(myInterval);
-	isCountDown = false;
+	
+	if (paused === false) {
+		$("#pause").addClass("resume").empty().text("RESUME");
+		clearInterval(myInterval);
+		isCountDown = false;
+		paused = true;
+		$(".inputBtn").removeClass("hidden");
+		sec_left = parseInt($("#countDownSec").html())/60; 
+		min_left = parseInt($("#countDownMinute").html());
+		time_left = sec_left + min_left;
+	}
+	else if (paused === true) {
+		$("#pause").removeClass("resume").empty().text("PAUSE");
+		countdown(time_left);
+		paused = false;
+		$(".inputBtn").addClass("hidden");
+
+	}
+	
 });
 	
+
 /*session countdown*/
 function countdown(endDate) {
   let hours, minutes, seconds;
@@ -74,7 +94,7 @@ function countdown(endDate) {
   
   myInterval = setInterval(calculate, 1000);
   
-	function calculate() {
+	function calculate(hours, minutes, seconds) {
 	    let startDate = 0;
 	    
 	    
@@ -98,7 +118,7 @@ function countdown(endDate) {
 	    }
 	  	/*this next section changes between work and break, can be taken out and the above function
 	  	can be used again in other code, work independently*/
-		if (minutes === 0 && seconds === 0 && $("#sessionName").text() === "Work") {
+		if (hours === 0 && minutes === 0 && seconds === 0 && $("#sessionName").text() === "Work") {
 		  		$("#sessionName").text("Break");
 		  		countdown($("#breakInput").html()); //changes to break time :)
 		  		audioWorkcomplete.play();
@@ -109,13 +129,17 @@ function countdown(endDate) {
 				audioReady.play();
 			}
 		else {return;}
-	
-		
 	}
 
   
 };
+//reset the clock to
 
+$("#reset-btn").click(function(){
+	$("#countDownSec").empty();
+	$("#countDownMinute").empty();
+	$("#countDownHour").empty();
+})
 
 
 
